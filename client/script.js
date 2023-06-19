@@ -81,9 +81,9 @@ const handleSubmit = async (e) => {
 
   loader(messageDiv);
 
-  // get data from server
+  // get data from server hosted from... :https://zaddy-ai.onrender.com
 
-  const response = await fetch('http://localhost:5000', {
+  const response = await fetch('https://zaddy-ai.onrender.com', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
