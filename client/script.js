@@ -62,6 +62,7 @@ function chatStripe(isAi, value, uniqueId) {
 }
 
 const handleSubmit = async (e) => {
+  // Prevents refresh of page
   e.preventDefault();
 
   const data = new FormData(form);
@@ -83,7 +84,7 @@ const handleSubmit = async (e) => {
 
   // get data from server hosted from... :https://zaddy-ai.onrender.com
 
-  const response = await fetch('https://zaddy-ai.onrender.com', {
+  const response = await fetch('http://localhost:5000', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -98,6 +99,7 @@ const handleSubmit = async (e) => {
 
   if(response.ok) {
     const data = await response.json();
+    console.log(data);
     const parsedData = data.bot.trim();
 
     typeText(messageDiv, parsedData);
